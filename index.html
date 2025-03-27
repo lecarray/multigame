@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏乐园 - 免费在线游戏平台</title>
+    <meta name="description" content="游戏乐园提供各类免费在线游戏，包括动作游戏、益智游戏、策略游戏等。无需下载，直接在浏览器中畅玩！">
+    <meta name="keywords" content="在线游戏,免费游戏,网页游戏,HTML5游戏,Monster Survivors">
+    <link rel="canonical" href="https://monstergo.space/">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <a href="index.html" class="logo">游戏乐园</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">首页</a></li>
+                <li class="nav-item"><a href="games/action/index.html" class="nav-link">动作游戏</a></li>
+                <li class="nav-item"><a href="games/puzzle/index.html" class="nav-link">益智游戏</a></li>
+                <li class="nav-item"><a href="games/strategy/index.html" class="nav-link">策略游戏</a></li>
+                <li class="nav-item"><a href="pages/about.html" class="nav-link">关于我们</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="搜索游戏...">
+                <button class="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">畅玩各种精彩游戏</h1>
+            <p class="hero-subtitle">在游戏乐园，你可以免费体验各种类型的优质在线游戏。无需下载，即点即玩！</p>
+            <a href="#featured-games" class="btn hero-btn">开始探索</a>
+        </div>
+    </section>
+
+    <!-- 游戏分类导航 -->
+    <div class="container">
+        <div class="categories-nav">
+            <div class="category-tab active">全部游戏</div>
+            <div class="category-tab">动作游戏</div>
+            <div class="category-tab">益智游戏</div>
+            <div class="category-tab">策略游戏</div>
+            <div class="category-tab">休闲游戏</div>
+            <div class="category-tab">角色扮演</div>
+        </div>
+    </div>
+
+    <!-- 特色游戏区域 -->
+    <section id="featured-games" class="featured-games">
+        <div class="container">
+            <div class="featured-heading">
+                <h2 class="featured-title">特色游戏</h2>
+                <p class="featured-subtitle">我们精选的最受欢迎游戏，让你体验不同类型的游戏乐趣</p>
+            </div>
+            
+            <div class="featured-slider">
+                <div class="slider-container">
+                    <!-- 特色游戏卡片 1: Monster Survivors -->
+                    <div class="slider-item">
+                        <div class="card">
+                            <img src="assets/images/monster-survivors.jpg" alt="Monster Survivors" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Monster Survivors</h3>
+                                <p class="card-text">在这款动作生存游戏中对抗无尽的怪物浪潮，提升你的角色能力以生存更久。</p>
+                                <a href="games/monster-survivors/index.html" class="card-btn">立即游戏</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 特色游戏卡片 2 -->
+                    <div class="slider-item">
+                        <div class="card">
+                            <img src="assets/images/puzzle-quest.jpg" alt="智慧拼图" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">智慧拼图</h3>
+                                <p class="card-text">挑战你的智力极限，解决各种复杂的拼图和谜题，提升你的逻辑思维能力。</p>
+                                <a href="games/puzzle/puzzle-quest.html" class="card-btn">立即游戏</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 特色游戏卡片 3 -->
+                    <div class="slider-item">
+                        <div class="card">
+                            <img src="assets/images/tower-defense.jpg" alt="塔防大师" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">塔防大师</h3>
+                                <p class="card-text">策略性地放置防御塔，阻止敌人入侵你的领地，成为真正的塔防大师。</p>
+                                <a href="games/strategy/tower-defense.html" class="card-btn">立即游戏</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-control slider-prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </button>
+                    <button class="slider-control slider-next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 动作游戏区域 -->
+    <section class="category-section">
+        <div class="container">
+            <h2 class="category-title">动作游戏</h2>
+            <div class="game-grid">
+                <!-- 动作游戏卡片 1 -->
+                <div class="card">
+                    <img src="assets/images/monster-survivors.jpg" alt="Monster Survivors" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Monster Survivors</h3>
+                        <p class="card-text">在这款动作生存游戏中对抗无尽的怪物浪潮。</p>
+                        <a href="games/monster-survivors/index.html" class="card-btn">立即游戏</a>
+                    </div>
+                </div>
+                
+                <!-- 动作游戏卡片 2 -->
+                <div class="card">
+                    <img src="assets/images/ninja-runner.jpg" alt="忍者跑酷" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">忍者跑酷</h3>
+                        <p class="card-text">控制你的忍者角色，跳跃、滑行，躲避障碍物。</p>
+                        <a href="games/action/ninja-runner.html" class="card-btn">立即游戏</a>
+                    </div>
+                </div>
+                
+                <!-- 动作游戏卡片 3 -->
+                <div class="card">
+                    <img src="assets/images/space-shooter.jpg" alt="太空射手" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">太空射手</h3>
+                        <p class="card-text">驾驶你的太空飞船，射击敌人，保卫地球。</p>
+                        <a href="games/action/space-shooter.html" class="card-btn">立即游戏</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="games/action/index.html" class="btn">查看更多动作游戏</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 益智游戏区域 -->
+    <section class="category-section">
+        <div class="container">
+            <h2 class="category-title">益智游戏</h2>
+            <div class="game-grid">
+                <!-- 益智游戏卡片 1 -->
+                <div class="card">
+                    <img src="assets/images/puzzle-quest.jpg" alt="智慧拼图" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">智慧拼图</h3>
+                        <p class="card-text">挑战你的智力极限，解决各种复杂的拼图和谜题。</p>
+                        <a href="games/puzzle/puzzle-quest.html" class="card-btn">立即游戏</a>
+                    </div>
+                </div>
+                
+                <!-- 益智游戏卡片 2 -->
+                <div class="card">
+                    <img src="assets/images/memory-match.jpg" alt="记忆配对" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">记忆配对</h3>
+                        <p class="card-text">测试你的记忆力，找出所有匹配的卡片对。</p>
+                        <a href="games/puzzle/memory-match.html" class="card-btn">立即游戏</a>
+                    </div>
+                </div>
+                
+                <!-- 益智游戏卡片 3 -->
+                <div class="card">
+                    <img src="assets/images/word-master.jpg" alt="单词大师" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">单词大师</h3>
+                        <p class="card-text">用给定的字母组合成尽可能多的单词。</p>
+                        <a href="games/puzzle/word-master.html" class="card-btn">立即游戏</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="games/puzzle/index.html" class="btn">查看更多益智游戏</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 策略游戏区域 -->
+    <section class="category-section">
+        <div class="container">
+            <h2 class="category-title">策略游戏</h2>
+            <div class="game-grid">
+                <!-- 策略游戏卡片 1 -->
+                <div class="card">
+                    <img src="assets/images/tower-defense.jpg" alt="塔防大师" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">塔防大师</h3>
+                        <p class="card-text">策略性地放置防御塔，阻止敌人入侵你的领地。</p>
+                        <a href="games/strategy/tower-defense.html" class="card-btn">立即游戏</a>
+                    </div>
+                </div>
+                
+                <!-- 策略游戏卡片 2 -->
+                <div class="card">
+                    <img src="assets/images/city-builder.jpg" alt="城市建设者" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">城市建设者</h3>
+                        <p class="card-text">规划和建设你自己的城市，管理资源和人口。</p>
+                        <a href="games/strategy/city-builder.html" class="card-btn">立即游戏</a>
+                    </div>
+                </div>
+                
+                <!-- 策略游戏卡片 3 -->
+                <div class="card">
+                    <img src="assets/images/chess-master.jpg" alt="国际象棋大师" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">国际象棋大师</h3>
+                        <p class="card-text">挑战电脑或其他玩家，提升你的国际象棋技巧。</p>
+                        <a href="games/strategy/chess-master.html" class="card-btn">立即游戏</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="games/strategy/index.html" class="btn">查看更多策略游戏</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 游戏统计 -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-text">游戏数量</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50万+</div>
+                    <div class="stat-text">注册玩家</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000万+</div>
+                    <div class="stat-text">游戏次数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.8</div>
+                    <div class="stat-text">平均评分</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新新闻 -->
+    <section class="news-section">
+        <div class="container">
+            <h2 class="category-title">游戏新闻</h2>
+            <div class="news-grid">
+                <!-- 新闻卡片 1 -->
+                <div class="news-card">
+                    <img src="assets/images/news1.jpg" alt="新游戏上线" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">2023-12-15</div>
+                        <h3 class="news-title">五款新游戏本周上线</h3>
+                        <p class="news-excerpt">我们很高兴地宣布，本周将有五款全新游戏加入我们的平台，包括动作、益智和策略类游戏。</p>
+                        <a href="#" class="news-link">
+                            阅读更多
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 新闻卡片 2 -->
+                <div class="news-card">
+                    <img src="assets/images/news2.jpg" alt="游戏比赛" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">2023-12-10</div>
+                        <h3 class="news-title">年度游戏比赛即将开始</h3>
+                        <p class="news-excerpt">准备好参加我们的年度游戏比赛了吗？报名即将开始，赢取丰厚奖品！</p>
+                        <a href="#" class="news-link">
+                            阅读更多
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 新闻卡片 3 -->
+                <div class="news-card">
+                    <img src="assets/images/news3.jpg" alt="网站更新" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">2023-12-05</div>
+                        <h3 class="news-title">网站改版完成</h3>
+                        <p class="news-excerpt">我们完成了网站的全面改版，提供更好的用户体验和更多的游戏分类。</p>
+                        <a href="#" class="news-link">
+                            阅读更多
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 邮件订阅 -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="newsletter-title">订阅我们的新闻</h2>
+            <p class="newsletter-subtitle">及时获取最新游戏更新、活动和优惠信息</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="输入您的邮箱地址" required>
+                <button type="submit" class="newsletter-btn">订阅</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">游戏乐园</h3>
+                    <p>提供优质的免费在线游戏，让您随时随地享受游戏乐趣。</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">游戏分类</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="games/action/index.html">动作游戏</a></li>
+                        <li class="footer-link"><a href="games/puzzle/index.html">益智游戏</a></li>
+                        <li class="footer-link"><a href="games/strategy/index.html">策略游戏</a></li>
+                        <li class="footer-link"><a href="#">休闲游戏</a></li>
+                        <li class="footer-link"><a href="#">角色扮演</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">热门游戏</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="games/monster-survivors/index.html">Monster Survivors</a></li>
+                        <li class="footer-link"><a href="games/puzzle/puzzle-quest.html">智慧拼图</a></li>
+                        <li class="footer-link"><a href="games/strategy/tower-defense.html">塔防大师</a></li>
+                        <li class="footer-link"><a href="games/action/ninja-runner.html">忍者跑酷</a></li>
+                        <li class="footer-link"><a href="games/strategy/chess-master.html">国际象棋大师</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">关于我们</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="pages/about.html">关于我们</a></li>
+                        <li class="footer-link"><a href="pages/contact.html">联系我们</a></li>
+                        <li class="footer-link"><a href="#">隐私政策</a></li>
+                        <li class="footer-link"><a href="#">服务条款</a></li>
+                        <li class="footer-link"><a href="pages/faq.html">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 游戏乐园. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/search.js"></script>
+    <script>
+        // 分类标签切换
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // 简单的轮播图功能
+        const sliderContainer = document.querySelector('.slider-container');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        
+        let position = 0;
+        const slideWidth = document.querySelector('.slider-item').offsetWidth + 20; // 加上margin
+        const slideCount = document.querySelectorAll('.slider-item').length;
+        
+        prevBtn.addEventListener('click', function() {
+            position = Math.min(position + slideWidth, 0);
+            sliderContainer.style.transform = `translateX(${position}px)`;
+        });
+        
+        nextBtn.addEventListener('click', function() {
+            const maxTranslate = -(slideWidth * (slideCount - 3));
+            position = Math.max(position - slideWidth, maxTranslate);
+            sliderContainer.style.transform = `translateX(${position}px)`;
+        });
+        
+        // 响应式轮播图调整
+        window.addEventListener('resize', function() {
+            position = 0;
+            sliderContainer.style.transform = `translateX(${position}px)`;
+        });
+        
+        // 搜索框功能
+        const searchInput = document.querySelector('.search-input');
+        const searchBtn = document.querySelector('.search-btn');
+        
+        searchBtn.addEventListener('click', function() {
+            const searchTerm = searchInput.value.trim();
+            if(searchTerm) {
+                alert(`搜索 "${searchTerm}" 的功能即将上线！`);
+            }
+        });
+        
+        searchInput.addEventListener('keypress', function(e) {
+            if(e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+    </script>
+</body>
+</html> 

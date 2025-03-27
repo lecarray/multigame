@@ -1,0 +1,336 @@
+/* 首页特定样式 */
+
+/* 英雄区域 */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    margin-bottom: 40px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 0.8s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.hero-btn {
+    animation: fadeIn 0.8s ease 0.4s forwards;
+    opacity: 0;
+}
+
+/* 特色游戏区域 */
+.featured-games {
+    margin-bottom: 50px;
+}
+
+.featured-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.featured-title {
+    font-size: 2.2rem;
+    color: #1d1d1f;
+    margin-bottom: 10px;
+}
+
+.featured-subtitle {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 特色游戏滑块 */
+.featured-slider {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -15px;
+    padding: 0 15px;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    margin-bottom: 20px;
+}
+
+.slider-item {
+    flex: 0 0 calc(33.333% - 20px);
+    margin: 0 10px;
+    min-width: 300px;
+}
+
+@media (max-width: 992px) {
+    .slider-item {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .slider-item {
+        flex: 0 0 calc(100% - 20px);
+    }
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.slider-control {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.slider-control:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.slider-control svg {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+}
+
+/* 游戏分类导航 */
+.categories-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.category-tab {
+    padding: 8px 20px;
+    margin: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.category-tab:hover {
+    background-color: #f0f0f0;
+}
+
+.category-tab.active {
+    background-color: #0071e3;
+    color: #fff;
+    border-color: #0071e3;
+}
+
+/* 最新游戏区域 */
+.new-games {
+    background-color: #fff;
+    padding: 50px 0;
+    margin: 40px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 游戏统计 */
+.stats-section {
+    background-color: #0071e3;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat-text {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 游戏推荐 */
+.recommended-section {
+    margin: 40px 0;
+}
+
+/* 新闻区块 */
+.news-section {
+    margin: 60px 0;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.news-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #1d1d1f;
+}
+
+.news-excerpt {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.news-link {
+    color: #0071e3;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.news-link svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+}
+
+/* 邮件订阅 */
+.newsletter {
+    background-color: #f0f0f0;
+    padding: 50px 0;
+    text-align: center;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.newsletter-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.newsletter-subtitle {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    color: #666;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.newsletter-btn {
+    background-color: #0071e3;
+    color: #fff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background-color: #0051a2;
+}
+
+/* 媒体查询 */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .featured-title {
+        font-size: 1.8rem;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-btn {
+        border-radius: 5px;
+        padding: 10px;
+    }
+} 
