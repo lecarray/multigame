@@ -9,6 +9,14 @@
     <link rel="canonical" href="https://monstergo.space/">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/home.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2Q0ZGXDRP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F2Q0ZGXDRP');
+    </script>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -435,6 +443,50 @@
                 searchBtn.click();
             }
         });
+
+        // 跟踪导航菜单点击
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                gtag('event', 'navigation_click', {
+                    'event_category': 'Navigation',
+                    'event_label': this.textContent
+                });
+            });
+        });
+
+        // 跟踪游戏卡片点击
+        document.querySelectorAll('.card-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const gameTitle = this.closest('.card').querySelector('.card-title').textContent;
+                gtag('event', 'game_start', {
+                    'event_category': 'Game',
+                    'event_label': gameTitle
+                });
+            });
+        });
+
+        // 跟踪分类标签点击
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                gtag('event', 'category_filter', {
+                    'event_category': 'Filter',
+                    'event_label': this.textContent
+                });
+            });
+        });
+
+        // 跟踪搜索行为
+        const searchInput = document.querySelector('.search-input');
+        if (searchInput) {
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    gtag('event', 'game_search', {
+                        'event_category': 'Search',
+                        'event_label': this.value
+                    });
+                }
+            });
+        }
     </script>
 </body>
 </html> 
