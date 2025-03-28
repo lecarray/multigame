@@ -6,6 +6,50 @@
     <title>游戏乐园 - 所有游戏</title>
     <link rel="stylesheet" href="../css/game-page.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* 额外的样式修复 */
+        .game-frame-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+        }
+        
+        .game-frame-container.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .game-frame {
+            width: 90%;
+            height: 90%;
+            border: none;
+            background: #000;
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .loading-indicator {
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -24,7 +68,7 @@
     <!-- 主要内容 -->
     <main class="game-container">
         <!-- 动作类游戏 -->
-        <section class="game-category">
+        <section class="game-category" id="action">
             <h2>动作类游戏</h2>
             <div class="game-grid">
                 <!-- Slice Master -->
@@ -70,14 +114,11 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 其他动作游戏卡片 -->
-                <!-- ... 其他游戏卡片 ... -->
             </div>
         </section>
 
         <!-- 益智类游戏 -->
-        <section class="game-category">
+        <section class="game-category" id="puzzle">
             <h2>益智类游戏</h2>
             <div class="game-grid">
                 <!-- 2048 -->
@@ -101,14 +142,11 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 其他益智游戏卡片 -->
-                <!-- ... 其他游戏卡片 ... -->
             </div>
         </section>
 
         <!-- 街机类游戏 -->
-        <section class="game-category">
+        <section class="game-category" id="arcade">
             <h2>街机类游戏</h2>
             <div class="game-grid">
                 <!-- Subway Surfers -->
@@ -132,14 +170,11 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 其他街机游戏卡片 -->
-                <!-- ... 其他游戏卡片 ... -->
             </div>
         </section>
 
         <!-- 体育类游戏 -->
-        <section class="game-category">
+        <section class="game-category" id="sports">
             <h2>体育类游戏</h2>
             <div class="game-grid">
                 <!-- Basketball Stars -->
@@ -163,9 +198,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 其他体育游戏卡片 -->
-                <!-- ... 其他游戏卡片 ... -->
             </div>
         </section>
     </main>
@@ -173,7 +205,8 @@
     <!-- 游戏iframe容器 -->
     <div class="game-frame-container">
         <span class="close-button">&times;</span>
-        <iframe class="game-frame" allow="gamepad *;"></iframe>
+        <div class="loading-indicator">游戏加载中...</div>
+        <iframe class="game-frame" allow="gamepad *; fullscreen *; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
 
     <!-- 页脚 -->
@@ -190,6 +223,7 @@
             const gameFrame = document.querySelector('.game-frame');
             const closeButton = document.querySelector('.close-button');
             const playButtons = document.querySelectorAll('.play-button');
+            const loadingIndicator = document.querySelector('.loading-indicator');
 
             // 游戏数据映射
             const gameUrls = {
@@ -209,8 +243,19 @@
                     const gameUrl = gameUrls[gameId];
                     
                     if (gameUrl) {
-                        gameFrame.src = gameUrl;
+                        // 显示加载指示器
+                        loadingIndicator.style.display = 'block';
+                        
+                        // 显示游戏容器
                         gameFrameContainer.classList.add('active');
+                        
+                        // 加载游戏
+                        gameFrame.src = gameUrl;
+                        
+                        // 游戏加载完成后隐藏加载指示器
+                        gameFrame.onload = function() {
+                            loadingIndicator.style.display = 'none';
+                        };
                     }
                 });
             });
@@ -218,14 +263,18 @@
             // 关闭游戏
             closeButton.addEventListener('click', function() {
                 gameFrameContainer.classList.remove('active');
-                gameFrame.src = '';
+                setTimeout(() => {
+                    gameFrame.src = '';
+                }, 300);
             });
 
             // ESC键关闭游戏
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     gameFrameContainer.classList.remove('active');
-                    gameFrame.src = '';
+                    setTimeout(() => {
+                        gameFrame.src = '';
+                    }, 300);
                 }
             });
         });

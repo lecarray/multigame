@@ -17,6 +17,50 @@
         gtag('js', new Date());
         gtag('config', 'G-F2Q0ZGXDRP');
     </script>
+    <style>
+        /* 游戏弹窗样式 */
+        .game-frame-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+        }
+        
+        .game-frame-container.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .game-frame {
+            width: 90%;
+            height: 90%;
+            border: none;
+            background: #000;
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .loading-indicator {
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -388,6 +432,13 @@
         </div>
     </footer>
 
+    <!-- 游戏iframe容器 -->
+    <div class="game-frame-container">
+        <span class="close-button">&times;</span>
+        <div class="loading-indicator">游戏加载中...</div>
+        <iframe class="game-frame" allow="gamepad *; fullscreen *; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+
     <!-- JavaScript -->
     <script src="js/search.js"></script>
     <script>
@@ -486,6 +537,65 @@
                 }
             });
         }
+
+        // 游戏加载和显示逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const gameFrameContainer = document.querySelector('.game-frame-container');
+            const gameFrame = document.querySelector('.game-frame');
+            const closeButton = document.querySelector('.close-button');
+            const playButtons = document.querySelectorAll('.play-button');
+            const loadingIndicator = document.querySelector('.loading-indicator');
+
+            // 游戏数据映射
+            const gameUrls = {
+                'slice-master': 'https://www.crazygames.com/embed/slice-master',
+                '2048': 'https://www.crazygames.com/embed/2048',
+                'subway-surfers': 'https://www.crazygames.com/embed/subway-surfers',
+            };
+
+            // 点击开始游戏按钮
+            playButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const gameId = this.dataset.game;
+                    const gameUrl = gameUrls[gameId];
+                    
+                    if (gameUrl) {
+                        // 显示加载指示器
+                        loadingIndicator.style.display = 'block';
+                        
+                        // 显示游戏容器
+                        gameFrameContainer.classList.add('active');
+                        
+                        // 加载游戏
+                        gameFrame.src = gameUrl;
+                        
+                        // 游戏加载完成后隐藏加载指示器
+                        gameFrame.onload = function() {
+                            loadingIndicator.style.display = 'none';
+                        };
+                    }
+                });
+            });
+
+            // 关闭游戏
+            closeButton.addEventListener('click', function() {
+                gameFrameContainer.classList.remove('active');
+                setTimeout(() => {
+                    gameFrame.src = '';
+                }, 300);
+            });
+
+            // ESC键关闭游戏
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    gameFrameContainer.classList.remove('active');
+                    setTimeout(() => {
+                        gameFrame.src = '';
+                    }, 300);
+                }
+            });
+        });
     </script>
 </body>
 </html> 
